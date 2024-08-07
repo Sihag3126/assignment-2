@@ -517,7 +517,7 @@ create recipes */
 }
 
 .recipe-operations-title {
-  color: #dc143c;
+  color: #fff;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -535,14 +535,14 @@ create recipes */
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #555;
+  color: #fff;
 }
 
 .recipe-operations-input,
 .recipe-operations-textarea {
   width: 100%;
   padding: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   border-radius: 4px;
   font-size: 16px;
 }
