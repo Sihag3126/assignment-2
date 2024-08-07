@@ -38,6 +38,7 @@ app.engine('hbs', engine({
   }
 }));
 
+// use hbs as the default view engine
 app.set('view engine', 'hbs');
 
 // Middleware setup
