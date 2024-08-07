@@ -1,0 +1,43 @@
+<div class="recipe-operations-container">
+  <h1 class="recipe-operations-title">Edit Recipe</h1>
+  <form
+    class="recipe-operations-form"
+    action="/users/profile/recipes/{{recipe._id}}"
+    method="POST"
+  >
+    <div class="recipe-operations-form-group">
+      <label class="recipe-operations-label" for="title">Title:</label>
+      <input
+        class="recipe-operations-input"
+        type="text"
+        id="title"
+        name="title"
+        value="{{recipe.title}}"
+        required
+      />
+    </div>
+    <div class="recipe-operations-form-group">
+      <label class="recipe-operations-label" for="ingredients">Ingredients
+        (comma-separated):</label>
+      <textarea
+        class="recipe-operations-textarea"
+        id="ingredients"
+        name="ingredients"
+        required
+      >{{recipe.ingredients}}</textarea>
+    </div>
+    <div class="recipe-operations-form-group">
+      <label
+        class="recipe-operations-label"
+        for="instructions"
+      >Instructions:</label>
+      <textarea
+        class="recipe-operations-textarea"
+        id="instructions"
+        name="instructions"
+        required
+      >{{recipe.instructions}}</textarea>
+    </div>
+    <button class="recipe-operations-button" type="submit">Update Recipe</button>
+  </form>
+</div>

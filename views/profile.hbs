@@ -1,0 +1,33 @@
+<div class="dashboard">
+  <h1>Welcome, {{user.email}}!</h1>
+  <p>This is your profile page.</p>
+  <p>Email: {{user.email}}</p>
+  <p>Account created: {{user.createdAt}}</p>
+
+  <a href="/recipes/create">Create New Recipe</a>
+
+  <h2>Your Recipes</h2>
+  {{#if recipes.length}}
+    {{#each recipes}}
+      <div class="recipe">
+        <h3>{{this.title}}</h3>
+        <p><strong>Created at:</strong> {{this.createdAt}}</p>
+        <p><strong>Ingredients:</strong></p>
+        <ul>
+          {{#each this.ingredients}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <p><strong>Instructions:</strong></p>
+        <p>{{this.instructions}}</p>
+        <a href="/users/profile/recipes/{{this._id}}/edit">Edit</a>
+        <a
+          href="/users/profile/recipes/{{this._id}}/delete"
+          onclick="return confirm('Are you sure?')"
+        >Delete</a>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>You haven't created any recipes yet.</p>
+  {{/if}}
+</div>

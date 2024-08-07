@@ -1,0 +1,21 @@
+<div class="authentication">
+  <h1>Register</h1>
+
+  <form id="registerForm" action="/auth/register" method="POST">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="{{email}}" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+    {{#if error}}
+      <div id="errorMessages" class="error-messages">
+        <p>{{error}}</p>
+      </div>
+    {{/if}}
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="/auth/login">Login here</a></p>
+</div>

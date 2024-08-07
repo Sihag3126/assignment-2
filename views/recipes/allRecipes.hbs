@@ -1,0 +1,35 @@
+<div class="all-recipes">
+  <h1 class="all-recipes__title">All Recipes</h1>
+
+  {{#if recipes.length}}
+    {{#each recipes}}
+      <div class="all-recipes__card">
+        <h2 class="all-recipes__card-title">{{this.title}}</h2>
+        
+        <h3 class="all-recipes__section-title">Ingredients:</h3>
+        <ul class="all-recipes__ingredients-list">
+          {{#each this.ingredients}}
+            <li class="all-recipes__ingredient-item">{{this}}</li>
+          {{/each}}
+        </ul>
+        
+        <h3 class="all-recipes__section-title">Instructions:</h3>
+        <p class="all-recipes__instructions">{{this.instructions}}</p>
+        
+        <p class="all-recipes__meta"><strong>Created by:</strong> {{this.creator.email}}</p>
+        <p class="all-recipes__meta"><strong>Created on:</strong> {{formatDate this.createdAt}}</p>
+        
+        {{#if (eq ../user._id this.creator._id)}}
+          <div class="all-recipes__actions">
+            <a href="/users/profile/recipes/{{this._id}}/edit" class="all-recipes__action-link">Edit</a>
+            <a href="/users/profile/recipes/{{this._id}}/delete" class="all-recipes__action-link all-recipes__action-link--delete" onclick="return confirm('Are you sure you want to delete this recipe?')">Delete</a>
+          </div>
+        {{/if}}
+      </div>
+    {{/each}}
+  {{else}}
+    <p class="all-recipes__no-recipes">No recipes found.</p>
+  {{/if}}
+
+  <a href="/recipes/create" class="all-recipes__create-link">Create New Recipe</a>
+</div>

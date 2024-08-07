@@ -1,0 +1,40 @@
+<header>
+  <nav>
+    <div class="logo">Recipe<span>Sharing</span></div>
+    <div class="menu-toggle">
+      <span class="hamburger">&#9776;</span>
+      <span class="close">&#10005;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link" data-path="/">Home</a></li>
+      <li><a
+          href="/recipes"
+          class="nav-link"
+          data-path="/recipes"
+        >Recipes</a></li>
+      {{#if user}}
+        <li><a
+            href="/users/profile"
+            class="nav-link"
+            data-path="/users/profile"
+          >Profile</a></li>
+        <li><a
+            href="/auth/logout"
+            class="nav-link"
+            data-path="/auth/logout"
+          >Logout</a></li>
+      {{else}}
+        <li><a
+            href="/auth/login"
+            class="nav-link"
+            data-path="/auth/login"
+          >Login</a></li>
+        <li><a
+            href="/auth/register"
+            class="nav-link"
+            data-path="/auth/register"
+          >Register</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</header>
