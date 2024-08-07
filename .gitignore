@@ -81,8 +81,6 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# Express specific
-public/
 
 # OS generated files
 .DS_Store
