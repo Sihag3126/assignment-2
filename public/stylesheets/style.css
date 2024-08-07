@@ -121,6 +121,20 @@ nav {
 main {
   flex: 1; /* This will make the main content area grow to fill available space */
   padding: 1rem;
+  position: relative; /* Required for the pseudo-element */
+  background: url("/images/top-view-table-full-delicious-food-composition.jpg")
+    no-repeat center center/cover;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 25, 0, 0.039); /* Red shade with 50% opacity */
+  pointer-events: none; /* Ensures the overlay doesn't interfere with content interaction */
 }
 /* MAIN AREA STYLES END */
 
@@ -583,7 +597,7 @@ create recipes */
 }
 
 .all-recipes__title {
-  color: #dc143c;
+  color: #fff;
   text-align: center;
   margin-bottom: 30px;
   font-size: 2.5em;
@@ -662,7 +676,7 @@ create recipes */
 
 .all-recipes__no-recipes {
   text-align: center;
-  color: #7f8c8d;
+  color: #fff;
   font-style: italic;
 }
 
